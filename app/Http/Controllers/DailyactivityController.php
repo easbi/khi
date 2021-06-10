@@ -25,7 +25,7 @@ class DailyactivityController extends Controller
      */
     public function create()
     {
-        //
+        return view('dailyactivity.create');
     }
 
     /**
