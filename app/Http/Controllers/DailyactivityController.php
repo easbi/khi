@@ -15,7 +15,7 @@ class DailyactivityController extends Controller
     public function index()
     {
         $activity = DailyActivity::latest()->paginate(5);
-        dd($activity);
+        return view('dailyactivity.index', compact('activity'));
     }
 
     /**
@@ -36,7 +36,13 @@ class DailyactivityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kegiatan' => 'required',
+        ]);
+
+        DailyActivity::create($request->all());
+
+        return redirect()->route('dailyactivity.index')->with('success', '');
     }
 
     /**
