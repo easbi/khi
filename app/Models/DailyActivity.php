@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DailyActivity extends Model
+
+class Dailyactivity extends Model
 {
     use HasFactory;
 
@@ -13,8 +14,6 @@ class DailyActivity extends Model
     protected $fillable=[
         'nip',
         'wfo_wfh',
-        'fungsional',
-        'butir_kegiatan',
         'kegiatan',
         'bukti',
         'satuan',

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DailyActivity;
+use App\Models\Dailyactivity;
 use Illuminate\Http\Request;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
+use DB;
+use Illuminate\Support\Facades\Auth;
 
 class DailyactivityController extends Controller
 {
@@ -14,8 +18,8 @@ class DailyactivityController extends Controller
      */
     public function index()
     {
-        $activity = DailyActivity::latest()->paginate(5);
-        return view('dailyactivity.index', compact('activity'));
+        $activities = Dailyactivity::latest()->paginate(5);
+        return view('dailyactivity.index', compact('activities'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -36,13 +40,32 @@ class DailyactivityController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
+
         $request->validate([
-            'kegiatan' => 'required',
+            'nip' => 'required',
+            'wfo_wfh' => 'required',
+            'kegiatan'=> 'required',
+            'satuan'=> 'required',
+            'kuantitas'=> 'required',
+            'is_internet'=> 'required',
+            'tgl'=> 'required',
+            'created_by' =>'required' 
         ]);
 
-        DailyActivity::create($request->all());
+        Dailyactivity::create([
+                'nip' => $request->nip,
+                'wfo_wfh' => $request->wfo_wfh,
+                'kegiatan'=> $request->kegiatan, 
+                'satuan'=> $request->satuan,
+                'kuantitas'=> $request->kuantitas,
+                'is_internet'=> $request->is_internet,
+                'tgl'=> $request->tgl,
+                'created_by' => $request->nip,
+            ]);
 
-        return redirect()->route('dailyactivity.index')->with('success', '');
+         return redirect()->route('masterjenispeta.index')
+                        ->with('success','Jenis Peta created successfully.');
     }
 
     /**
@@ -51,7 +74,7 @@ class DailyactivityController extends Controller
      * @param  \App\Models\DailyActivity  $dailyActivity
      * @return \Illuminate\Http\Response
      */
-    public function show(DailyActivity $dailyActivity)
+    public function show(Dailyactivity $dailyactivity)
     {
         //
     }
