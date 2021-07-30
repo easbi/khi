@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DailyactivityController;
+use App\Http\Controllers\ActivitiesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('dailyact', DailyactivityController::class);
+Route::resource('act', ActivitiesController::class);

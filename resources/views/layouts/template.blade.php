@@ -14,6 +14,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Datatable CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+
   </head>
   <body class="h-100">
     <div class="container-fluid">
@@ -45,9 +46,15 @@
           <div class="nav-wrapper">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="index.html">
+                <a class="nav-link {{ Request::is('act')? "active":"" }}" href="{{ url('/act')}}">
+                  <i class="material-icons">view_module</i>
+                  <span>Tampilan Aktivitas</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{ Request::is('act/create')? "active":"" }}" href="{{ url('/act/create')}}">
                   <i class="material-icons">edit</i>
-                  <span>Add New Activities</span>
+                  <span>Tambahkan Aktivitas</span>
                 </a>
               </li>
               <!-- <li class="nav-item">
@@ -57,21 +64,15 @@
                 </a>
               </li> -->
               <li class="nav-item">
-                <a class="nav-link " href="add-new-post.html">
-                  <i class="material-icons">note_add</i>
-                  <span>Edit Activities</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="form-components.html">
-                  <i class="material-icons">view_module</i>
-                  <span>Forms &amp; Components</span>
+                <a class="nav-link {{ Request::is('/act/create')? 'active':'' }}" href="{{ url('/act/create')}}">
+                  <i class="material-icons" >note_add</i>
+                  <span>Mutakhirkan Aktivitas</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="tables.html">
                   <i class="material-icons">table_chart</i>
-                  <span>Tables</span>
+                  <span>Rekap Aktivitas Ku</span>
                 </a>
               </li>
               <li class="nav-item">
@@ -207,6 +208,8 @@
     
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
@@ -215,6 +218,5 @@
     <script src="{{asset('template/scripts/extras.1.1.0.min.js')}}"></script>
     <script src="{{asset('template/scripts/shards-dashboards.1.1.0.min.js')}}"></script>
     <script src="{{asset('template/scripts/app/app-blog-overview.1.1.0.js')}}"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
   </body>
 </html>

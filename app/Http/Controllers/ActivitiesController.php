@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dailyactivity;
+use App\Models\Activity;
 use Illuminate\Http\Request;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use DB;
 use Illuminate\Support\Facades\Auth;
 
-class DailyactivityController extends Controller
+class ActivitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class DailyactivityController extends Controller
      */
     public function index()
     {
-        $activities = Dailyactivity::latest()->paginate(5);
+        $activities = Activity::latest()->paginate(5);
         return view('dailyactivity.index', compact('activities'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -40,8 +40,6 @@ class DailyactivityController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
-
         $request->validate([
             'nip' => 'required',
             'wfo_wfh' => 'required',
@@ -50,10 +48,9 @@ class DailyactivityController extends Controller
             'kuantitas'=> 'required',
             'is_internet'=> 'required',
             'tgl'=> 'required',
-            'created_by' =>'required' 
         ]);
 
-        Dailyactivity::create([
+        $result = Activity::create([
                 'nip' => $request->nip,
                 'wfo_wfh' => $request->wfo_wfh,
                 'kegiatan'=> $request->kegiatan, 
@@ -64,17 +61,17 @@ class DailyactivityController extends Controller
                 'created_by' => $request->nip,
             ]);
 
-         return redirect()->route('masterjenispeta.index')
+         return redirect()->route('act.index')
                         ->with('success','Jenis Peta created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\DailyActivity  $dailyActivity
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function show(Dailyactivity $dailyactivity)
+    public function show(Activity $activity)
     {
         //
     }
@@ -82,10 +79,10 @@ class DailyactivityController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\DailyActivity  $dailyActivity
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function edit(DailyActivity $dailyActivity)
+    public function edit(Activity $activity)
     {
         //
     }
@@ -94,10 +91,10 @@ class DailyactivityController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\DailyActivity  $dailyActivity
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DailyActivity $dailyActivity)
+    public function update(Request $request, Activity $activity)
     {
         //
     }
@@ -105,11 +102,13 @@ class DailyactivityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\DailyActivity  $dailyActivity
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DailyActivity $dailyActivity)
+    public function destroy($id)
     {
-        //
+        $act = Activity::find($id);
+        $act->delete();
+        return redirect('/act');
     }
 }

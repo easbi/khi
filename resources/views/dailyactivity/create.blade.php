@@ -18,9 +18,19 @@
 			</div>
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item p-0 px-3 pt-3">
+					@if ($errors->any())
+	                    <div class="alert alert-danger">
+	                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+	                        <ul>
+	                            @foreach ($errors->all() as $error)
+	                                <li>{{ $error }}</li>
+	                            @endforeach
+	                        </ul>
+	                    </div>
+	                @endif
 					<div class="row">
 						<div class="col-sm-12 col-md-12">
-							<form action="{{ route('dailyact.store') }}" method="POST" enctype="multipart/form-data">
+							<form action="{{ route('act.store') }}" method="POST" enctype="multipart/form-data">
 								@csrf
 								<div class="form-group">
 									<label for="tgl">tangal</label>
@@ -40,7 +50,7 @@
 									</select>
 								</div>
 								<div class="form-group">
-									<label for="is_internet">Penggunaan Internet:</label>
+									<label for="is_internet">Penggunaan Interner:</label>
 									<select id="is_internet" class="form-control" name="is_internet">
 										<option value="1">Ya</option>
 										<option value="2">Tidak</option>

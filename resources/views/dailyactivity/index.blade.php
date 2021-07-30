@@ -20,6 +20,11 @@
 			<div class="card-header border-bottom">
 				<h6 class="m-0">Active Users</h6>
 			</div>
+			@if ($message = Session::get('success'))
+			<div class="alert alert-success">
+				<p>{{ $message }}</p>
+            </div>
+            @endif
 			<div class="card-body p-0 pb-3 text-center">
 				<table id="example" class="display responsive nowrap" width="100%">
                             <thead>
@@ -45,10 +50,10 @@
                                     <td>{{ $act->is_internet }}</td>
                                     <td>{{ $act->kualitas }}</td>
                                     <td>
-                                        <form action="{{ route('dailyact.destroy',$act->id) }}" method="POST">
+                                        <form action="{{ route('act.destroy',$act->id) }}" method="POST">
                          
-                                            <a class="btn btn-info btn-sm" href="{{ route('dailyact.show',$act->id) }}">Show</a>
-                                            <a class="btn btn-primary btn-sm" href="{{ route('dailyact.edit',$act->id) }}">Edit</a>                         
+                                            <a class="btn btn-info btn-sm" href="{{ route('act.show',$act->id) }}">Show</a>
+                                            <a class="btn btn-primary btn-sm" href="{{ route('act.edit',$act->id) }}">Edit</a>                         
                                             @csrf
                                             @method('DELETE')                         
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
