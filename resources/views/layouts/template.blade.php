@@ -14,6 +14,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Datatable CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
   </head>
   <body class="h-100">
@@ -205,8 +206,8 @@
         </main>
       </div>
     </div>
-    
 
+    
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
@@ -218,5 +219,8 @@
     <script src="{{asset('template/scripts/extras.1.1.0.min.js')}}"></script>
     <script src="{{asset('template/scripts/shards-dashboards.1.1.0.min.js')}}"></script>
     <script src="{{asset('template/scripts/app/app-blog-overview.1.1.0.js')}}"></script>
+
+        
+@stack('scripts')
   </body>
 </html>

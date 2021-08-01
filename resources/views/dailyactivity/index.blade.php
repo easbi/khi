@@ -26,7 +26,7 @@
             </div>
             @endif
 			<div class="card-body p-0 pb-3 text-center">
-				<table id="example" class="display responsive nowrap" width="100%">
+				<table id="example"  class="display responsive nowrap" width="100%">
                             <thead>
                                 <tr>
                                     <th>No</th>
