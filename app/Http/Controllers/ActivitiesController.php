@@ -71,9 +71,10 @@ class ActivitiesController extends Controller
      * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function show(Activity $activity)
+    public function show($id)
     {
-        //
+        $activity = DB::table('daily_activity')->where('id', $id)->first();
+        return view('dailyactivity.show',compact('activity'));
     }
 
     /**
@@ -82,9 +83,10 @@ class ActivitiesController extends Controller
      * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function edit(Activity $activity)
+    public function edit($id)
     {
-        //
+        $activity = DB::table('daily_activity')->where('id', $id)->first();
+        return view('dailyactivity.edit',compact('activity'));
     }
 
     /**
@@ -94,9 +96,21 @@ class ActivitiesController extends Controller
      * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Activity $activity)
+    public function update(Request $request, $id)
     {
-        //
+        $activity = Activity::find($id);
+        if($activity) {
+            $activity->nip = $request->nip;
+            $activity->wfo_wfh = $request->wfo_wfh;
+            $activity->kegiatan = $request->kegiatan;
+            $activity->satuan = $request->satuan;
+            $activity->kuantitas = $request->kuantitas;
+            $activity->is_internet = $request->is_internet;
+            $activity->tgl = $request->tgl;
+            $activity->created_by = $request->nip;
+            $activity->save();
+        }
+        return redirect()->route('act.index')->with('success', 'The activity updated successfully');
     }
 
     /**

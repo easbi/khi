@@ -43,6 +43,7 @@
 								<div class="form-group">
 									<label for="wfo_wfh">WFO/WFH:</label>
 									<select class="form-control" id="wfo_wfh" name="wfo_wfh">
+										<option value="" selected disabled>Select</option>
 										<option value="WFO">WFO - Work From Office</option>
 										<option value="WFH">WFO - Work From Home</option>
 										<option value="TL">Tugas Luar</option>
@@ -52,6 +53,7 @@
 								<div class="form-group">
 									<label for="is_internet">Penggunaan Interner:</label>
 									<select id="is_internet" class="form-control" name="is_internet">
+										<option value="" selected disabled>Select</option>
 										<option value="1">Ya</option>
 										<option value="2">Tidak</option>
 									</select>
