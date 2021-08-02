@@ -62,7 +62,7 @@ class ActivitiesController extends Controller
             ]);
 
          return redirect()->route('act.index')
-                        ->with('success','Jenis Peta created successfully.');
+                        ->with('success','Kegiatan Sukses Ditambahkan!');
     }
 
     /**
