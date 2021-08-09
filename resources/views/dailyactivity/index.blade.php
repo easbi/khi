@@ -47,8 +47,20 @@
                             <td>{{ $act->created_at }}</td>
                             <td>{{ $act->wfo_wfh }}</td>
                             <td>{{ $act->kegiatan }}</td>
-                            <td>{{ $act->is_internet }}</td>
-                            <td>{{ $act->kualitas }}</td>
+                            <td>
+                                @if($act->is_internet == 1)
+                                    <span class="badge badge-success">Ya</span>
+                                @else
+                                    <span class="badge badge-primary">Tidak</span>
+                                @endif
+                            </td>
+                            <td>
+                                @if($act->is_done == 1)
+                                    <span class="badge badge-warning">Selesai?</span>
+                                @else
+                                    <span class="badge badge-success">Selesai</span>
+                                @endif
+                            </td>
                             <td>
                                 <form action="{{ route('act.destroy',$act->id) }}" method="POST">
 
