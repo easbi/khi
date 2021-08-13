@@ -83,9 +83,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="errors.html">
+                <a class="nav-link " href="{{ url('/logout')}}">
                   <i class="material-icons">error</i>
-                  <span>Errors</span>
+                  <span>Logout</span>
                 </a>
               </li>
             </ul>

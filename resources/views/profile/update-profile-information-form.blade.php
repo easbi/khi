@@ -52,11 +52,39 @@
             </div>
         @endif
 
-        <!-- Name -->
+        <!-- Username -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="name" value="{{ __('Name') }}" />
-            <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
-            <x-jet-input-error for="name" class="mt-2" />
+            <x-jet-label for="username" value="{{ __('Username') }}" />
+            <x-jet-input id="username" type="text" class="mt-1 block w-full" wire:model.defer="state.username" autocomplete="username" />
+            <x-jet-input-error for="username" class="mt-2" />
+        </div>
+
+        <!-- Fullname -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="fullname" value="{{ __('Fullname') }}" />
+            <x-jet-input id="fullname" type="text" class="mt-1 block w-full" wire:model.defer="state.fullname" autocomplete="fullname" />
+            <x-jet-input-error for="fullname" class="mt-2" />
+        </div>
+
+        <!-- NIP 18 Digit -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="nip" value="{{ __('NIP 18 Digit') }}" />
+            <x-jet-input id="nip" type="text" class="mt-1 block w-full" wire:model.defer="state.nip" autocomplete="nip" />
+            <x-jet-input-error for="nip" class="mt-2" />
+        </div>
+
+        <!-- Organisasi -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="organisasi" value="{{ __('Organisasi') }}" />
+            <x-jet-input id="organisasi" type="text" class="mt-1 block w-full" wire:model.defer="state.organisasi" autocomplete="organisasi" />
+            <x-jet-input-error for="organisasi" class="mt-2" />
+        </div>
+
+        <!-- Unit Kerja -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="unit_kerja" value="{{ __('Unit Kerja') }}" />
+            <x-jet-input id="unit_kerja" type="text" class="mt-1 block w-full" wire:model.defer="state.unit_kerja" autocomplete="unit_kerja" />
+            <x-jet-input-error for="unit_kerja" class="mt-2" />
         </div>
 
         <!-- Email -->

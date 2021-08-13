@@ -10,8 +10,28 @@
             @csrf
 
             <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-jet-label for="username" value="{{ __('Username') }}" />
+                <x-jet-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus autocomplete="username" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="fullname" value="{{ __('Fullname') }}" />
+                <x-jet-input id="fullname" class="block mt-1 w-full" type="text" name="fullname" :value="old('fullname')" required autofocus autocomplete="fullname" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="nip" value="{{ __('NIP 18 Digit') }}" />
+                <x-jet-input id="nip" class="block mt-1 w-full" type="text" name="nip" :value="old('nip')" required autofocus autocomplete="nip" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="organisasi" value="{{ __('Organisasi') }}" />
+                <x-jet-input id="organisasi" class="block mt-1 w-full" type="text" name="organisasi" :value="old('organisasi')" required autofocus autocomplete="organisasi" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="unit_kerja" value="{{ __('Unit Kerja') }}" />
+                <x-jet-input id="unit_kerja" class="block mt-1 w-full" type="text" name="unit_kerja" :value="old('unit_kerja')" required autofocus autocomplete="unit_kerja" />
             </div>
 
             <div class="mt-4">

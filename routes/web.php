@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DailyactivityController;
 use App\Http\Controllers\ActivitiesController;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,8 @@ use App\Http\Controllers\ActivitiesController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 
 Route::resource('act', ActivitiesController::class);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
