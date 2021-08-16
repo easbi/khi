@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2021 at 09:12 AM
+-- Generation Time: Aug 16, 2021 at 07:47 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -58,7 +58,13 @@ INSERT INTO `daily_activity` (`id`, `nip`, `wfo_wfh`, `fungsional`, `butir_kegia
 (10, '199602182019011002', 'WFO', NULL, NULL, 'Menyiapkan Apel Pagi - Zoom + Operator + Petugas Pembaca UUD 1945', NULL, 'Kegiatan', 1, '1', 1, '2021-08-09', '2021-08-08 22:12:37', '2021-08-08 22:12:37', '199602182019011002'),
 (11, '199602182019011002', 'WFO', NULL, NULL, 'SWAB PCR Ke Puskesmas Sikolos', NULL, 'Kegiatan', 1, '2', 1, '2021-08-09', '2021-08-08 22:13:06', '2021-08-08 22:13:06', '199602182019011002'),
 (12, '199602182019011002', 'WFO', NULL, NULL, 'Melengkapi Pemutakhiran MySAPK - Progres 9/12 Tab', NULL, 'Kegiatan', 1, '1', 1, '2021-08-09', '2021-08-08 22:13:53', '2021-08-08 22:13:53', '199602182019011002'),
-(13, '199602182019011002', 'WFO', NULL, NULL, 'Memeriksa Dokumen SPTK 2021', NULL, 'Kegiatan', 3, '1', 2, '2021-08-09', '2021-08-09 06:07:55', '2021-08-09 06:07:55', '199602182019011002');
+(13, '199602182019011002', 'WFO', NULL, NULL, 'Memeriksa Dokumen SPTK 2021', NULL, 'Kegiatan', 3, '1', 2, '2021-08-09', '2021-08-09 06:07:55', '2021-08-09 06:07:55', '199602182019011002'),
+(14, '199602182019011002', 'WFH', NULL, NULL, 'Mengikuti Sosialisasi Peraturan Kepala BPS No. 2 Tahun 2021 Terkait Petunjuk Teknis AK Pranata Komputer', NULL, 'Kegiatan', 1, '1', 2, '2021-08-12', '2021-08-12 18:25:28', '2021-08-12 18:25:28', '199602182019011002'),
+(15, '199602182019011002', 'WFO', NULL, NULL, 'Memeriksa Dokumen SPTK 2021', NULL, 'Dokumen', 6, '1', 2, '2021-08-13', '2021-08-12 18:26:03', '2021-08-12 18:26:03', '199602182019011002'),
+(16, '199602182019011002', 'WFO', NULL, NULL, 'Mengikuti Jumat Berbagi', NULL, 'Kegiatan', 1, '1', 2, '2021-08-13', '2021-08-12 19:11:09', '2021-08-12 19:11:09', '199602182019011002'),
+(17, '199602182019011002', 'WFO', NULL, NULL, 'Update VIMK Tahunan Patch 1.0.2', NULL, 'Kegiatan', 1, '1', 2, '2021-08-13', '2021-08-12 21:25:12', '2021-08-12 21:25:12', '199602182019011002'),
+(18, '199602182019011002', 'WFO', NULL, NULL, 'Mengikuti Apel Pagi (Host, Menyiapkan Lagu2, Pembacaan UUD)', NULL, 'Kegiatan', 1, '1', 2, '2021-08-16', '2021-08-15 20:30:41', '2021-08-15 20:30:41', '199602182019011002'),
+(19, '199602182019011002', 'WFO', NULL, NULL, 'Memeriksa 3 Salinan Pertama PCL SAKERNAS 2021', NULL, 'Dokumen', 6, '1', 2, '2021-08-16', '2021-08-15 21:16:28', '2021-08-15 21:16:28', '199602182019011002');
 
 -- --------------------------------------------------------
 
@@ -150,7 +156,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('QdsPACQJPPQGVB3pbzk2kpWcw05IZ2D5SrrRztan', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiMXNDQk5RN3FtR3hJWDFMMXBkeUd4cjJ4U0pwZnlIbDUxSVhIeFdXMiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hY3QvY3JlYXRlIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJEU2eEx3S3NLWTl3ZGhPbS8yTEYvMy5VL0czVjBzTng5Umg3dU5ZbHpuYnZFQXUyR1R0MGIyIjtzOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMCRFNnhMd0tzS1k5d2RoT20vMkxGLzMuVS9HM1Ywc054OVJoN3VOWWx6bmJ2RUF1MkdUdDBiMiI7fQ==', 1628490249);
+('Ioj3Unsn3SaOFWbDLOkWI1zzAeSJU7FvbXHDlAM3', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiU21wa2hwWm1CTGVmNHR4T0VhRjVCVGFwaDhXYWdoZlJ3Tm9oV3lWdCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hY3QvY3JlYXRlIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJEU2eEx3S3NLWTl3ZGhPbS8yTEYvMy5VL0czVjBzTng5Umg3dU5ZbHpuYnZFQXUyR1R0MGIyIjt9', 1629087703);
 
 -- --------------------------------------------------------
 
@@ -160,11 +166,11 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fullname` varchar(70) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nip` varchar(18) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `organisasi` int(11) NOT NULL,
+  `organisasi` varchar(70) COLLATE utf8mb4_unicode_ci NOT NULL,
   `unit_kerja` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `foto` varchar(90) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -181,8 +187,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `nip`, `organisasi`, `unit_kerja`, `foto`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
-(1, 'easbi', '', 0, '', '', 'easbi@bps.go.id', NULL, '$2y$10$E6xLwKsKY9wdhOm/2LF/3.U/G3V0sNx9Rh7uNYlznbvEAu2GTt0b2', NULL, NULL, NULL, NULL, NULL, '2021-08-08 22:55:07', '2021-08-08 22:55:07');
+INSERT INTO `users` (`id`, `fullname`, `username`, `nip`, `organisasi`, `unit_kerja`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
+(1, 'Easbi Ikhsan', 'easbi', '199602182019011002', 'Seksi IPDS', 'BPS Kota Padang Panjang', 'easbi@bps.go.id', NULL, '$2y$10$E6xLwKsKY9wdhOm/2LF/3.U/G3V0sNx9Rh7uNYlznbvEAu2GTt0b2', NULL, NULL, NULL, NULL, NULL, '2021-08-08 22:55:07', '2021-08-12 20:57:31'),
+(2, 'Arius Jonnaidi SE, M.E', 'ariusjon', '196506241991021001', 'BPS Kota Padang Panjang', 'BPS Kota Padang Panjang', 'ariusjon@bps.go.ida', NULL, '$2y$10$vwzJf6PJyBgqU1ryOa8Wze24rZo4PUnbVi1MjwLrWNgIbr0C1GIiS', NULL, NULL, NULL, NULL, NULL, '2021-08-12 20:37:19', '2021-08-12 20:55:25');
 
 --
 -- Indexes for dumped tables
@@ -244,7 +251,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `daily_activity`
 --
 ALTER TABLE `daily_activity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -268,7 +275,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
