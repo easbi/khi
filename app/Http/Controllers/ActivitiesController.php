@@ -18,6 +18,7 @@ class ActivitiesController extends Controller
      */
     public function index()
     {
+        dd(Auth::user()->id);
         $activities = Activity::all();
         return view('dailyactivity.index', compact('activities'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
