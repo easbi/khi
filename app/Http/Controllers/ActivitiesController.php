@@ -18,7 +18,6 @@ class ActivitiesController extends Controller
      */
     public function index()
     {
-        dd(Auth::user()->id);
         $activities = Activity::all();
         return view('dailyactivity.index', compact('activities'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -42,7 +41,6 @@ class ActivitiesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nip' => 'required',
             'wfo_wfh' => 'required',
             'kegiatan'=> 'required',
             'satuan'=> 'required',
@@ -52,14 +50,14 @@ class ActivitiesController extends Controller
         ]);
 
         $result = Activity::create([
-                'nip' => $request->nip,
+                'nip' => Auth::user()->nip,
                 'wfo_wfh' => $request->wfo_wfh,
                 'kegiatan'=> $request->kegiatan, 
                 'satuan'=> $request->satuan,
                 'kuantitas'=> $request->kuantitas,
                 'is_internet'=> $request->is_internet,
                 'tgl'=> $request->tgl,
-                'created_by' => $request->nip,
+                'created_by' => Auth::user()->nip,
             ]);
 
          return redirect()->route('act.index')
@@ -101,14 +99,15 @@ class ActivitiesController extends Controller
     {
         $activity = Activity::find($id);
         if($activity) {
-            $activity->nip = $request->nip;
+            $activity->nip = Auth::user()->nip;
             $activity->wfo_wfh = $request->wfo_wfh;
             $activity->kegiatan = $request->kegiatan;
             $activity->satuan = $request->satuan;
             $activity->kuantitas = $request->kuantitas;
             $activity->is_internet = $request->is_internet;
             $activity->tgl = $request->tgl;
-            $activity->created_by = $request->nip;
+            $activity->is_done = $request->is_done;
+            $activity->created_by = Auth::user()->nip;
             $activity->save();
         }
         return redirect()->route('act.index')->with('success', 'The activity updated successfully');

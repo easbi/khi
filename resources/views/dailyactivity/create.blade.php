@@ -5,7 +5,7 @@
 <div class="page-header row no-gutters py-4">
 	<div class="col-12 col-sm-4 text-center text-sm-left mb-0">
 		<span class="text-uppercase page-subtitle">Dashboard</span>
-		<h3 class="page-title">Rekap Penilaian</h3>
+		<h3 class="page-title">Entri Kegiatan</h3>
 	</div>
 </div>
 
@@ -37,10 +37,6 @@
 									<input type="date" class="form-control form-control-lg mb-3" name="tgl">
 								</div>
 								<div class="form-group">
-									<label for="nip">NIP 18 Digit:</label>
-									<input type="text" class="form-control form-control-lg mb-3" name="nip"/>
-								</div>
-								<div class="form-group">
 									<label for="wfo_wfh">WFO/WFH:</label>
 									<select class="form-control" id="wfo_wfh" name="wfo_wfh">
 										<option value="" selected disabled>Select</option>
@@ -51,7 +47,7 @@
 									</select>
 								</div>
 								<div class="form-group">
-									<label for="is_internet">Penggunaan Interner:</label>
+									<label for="is_internet">Penggunaan Internet:</label>
 									<select id="is_internet" class="form-control" name="is_internet">
 										<option value="" selected disabled>Select</option>
 										<option value="1">Ya</option>

@@ -55,7 +55,7 @@
                                 @endif
                             </td>
                             <td>
-                                @if($act->is_done == 1)
+                                @if($act->is_done == 2)
                                     <span class="badge badge-warning">Selesai?</span>
                                 @else
                                     <span class="badge badge-success">Selesai</span>

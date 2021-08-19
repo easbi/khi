@@ -34,12 +34,8 @@
 								@csrf
 								@method('PUT')
 								<div class="form-group">
-									<label for="tgl">tangal</label>
+									<label for="tgl">Tangal</label>
 									<input type="date" class="form-control form-control-lg mb-3" name="tgl" value="{{ $activity->tgl }}">
-								</div>
-								<div class="form-group">
-									<label for="nip">NIP 18 Digit:</label>
-									<input type="text" class="form-control form-control-lg mb-3" name="nip" value="{{ $activity->nip }}">
 								</div>
 								<div class="form-group">
 									<label for="wfo_wfh">WFO/WFH:</label>
@@ -68,6 +64,15 @@
 								<div class="form-group">
 									<label for="satuan">Satuan:</label>
 									<input type="text" class="form-control" name="satuan" value="{{ $activity->satuan }}" />
+								</div>
+
+								<div class="form-group">
+									<label for="is_done">Status Penyelesaian</label>
+									<select id="is_done" class="form-control" name="is_done">
+										<option value="" selected disabled>Select</option>
+										<option value="1">Sudah Selesai</option>
+										<option value="2">Belum Selesai</option>
+									</select>
 								</div>
 								<div class="form-group">
 									<button type="submit" class="btn btn-success">Kirim</button>
