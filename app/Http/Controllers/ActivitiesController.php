@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use DB;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class ActivitiesController extends Controller
@@ -19,8 +20,9 @@ class ActivitiesController extends Controller
     public function index()
     {
         $activities = DB::table('daily_activity')->join('users', 'daily_activity.nip', 'users.nip')->select('daily_activity.*', 'users.fullname')->get();
-        // dd($activities);
-        return view('dailyactivity.index', compact('activities'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $userfill = Activity::whereDate('tgl', Carbon::today())->distinct('nip')->count();
+
+        return view('dailyactivity.index', compact('activities', 'userfill'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function selftable()

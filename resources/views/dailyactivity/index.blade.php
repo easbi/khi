@@ -15,7 +15,8 @@
 
 <!-- Default Light Table -->
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
 <div class="row">
     <div class="col">
         <div class="card card-small mb-4">
@@ -23,37 +24,78 @@
                 <h6 class="m-0">Monitoring Aktivitas</h6>
             </div>
             <div class="card-body d-flex flex-column">
-               <p class="text-center">
-                    <strong>Darah Tinggi</strong>
+                <p class="text-center">
+                    <strong>Progress Entri Pegawai</strong>
                 </p>
-                <div class="chart">
+                <style type="text/css">
+                    .chart1 {
+                        height:80px
+                    }
+                </style>
+                <div class="chart1">
                     <canvas id="myChart1"></canvas>
                     <script type="text/javascript">
-                        var ctx = document.getElementById('myChart1').getContext('2d');
-                        var chart = new Chart(ctx, {
-                                                // The type of chart we want to create
-                                                type: 'line',
-                                                // The data for our dataset
-                                                data: {
-                                                    labels: <?php echo $darah_tinggi_periode; ?>,
-                                                    datasets: [{
-                                                        label: 'Kasus Darah Tinggi',
-                                                        backgroundColor: 'rgb(255, 99, 132)',
-                                                        borderColor: 'rgb(255, 99, 132)',
-                                                        data: <?php echo $darah_tinggi_jumlah; ?>
-                                                    }]
-                                                },
-                                                // Configuration options go here
-                                                options: {
-                                                    tooltips :{
-                                                        mode: 'nearest'
-                                                    },
-                                                    animation: {
-                                                        duration: 2000,
-                                                        easing : 'easeInBounce'
-                                                    }
-                                                }
-                                            });
+                        var bar_ctx = document.getElementById('myChart1');
+                        var bar_chart = new Chart(bar_ctx, {
+                          type: 'horizontalBar',
+                          data: {
+                            labels: [],
+                            datasets: [{
+                              data: [<?php echo number_format($userfill*100/13,2); ?>],
+                              backgroundColor: "#00BC43",
+                              datalabels: {
+                                color: 'white'               //Color for percentage value
+                              }
+                            }, {
+                              data: [100 - <?php echo $userfill*100/13; ?>],
+                              backgroundColor: "lightgrey",
+                              hoverBackgroundColor: "lightgrey",
+                              datalabels: {
+                                color: 'lightgray'          // Make the color of the second bar percentage value same as the color of the bar
+                              }
+                            }, ]
+                          },
+                          options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            legend: {
+                              display: false
+                            },
+                            tooltips: {
+                              enabled: false
+                            },
+                            scales: {
+                              xAxes: [{
+                                display: false,
+                                stacked: true
+                              }],
+                              yAxes: [{
+                                display: false,
+                                stacked: true
+                              }],
+                            }, // scales
+                            plugins: {                                                                  // PROVIDE PLUGINS where you can specify custom style
+                              datalabels: {
+                                align: "start",
+                                anchor: "end",
+                                backgroundColor: null,
+                                borderColor: null,
+                                borderRadius: 4,
+                                borderWidth: 1,
+                                font: {
+                                  size: 20,
+                                  weight: "bold",                                           //Provide Font family for fancier look
+                                },
+                                offset: 10,
+                                formatter: function(value, context) {
+                                  return context.chart.data.labels[context.dataIndex];      //Provide value of the percentage manually or through data
+                                },
+                              },
+                            },
+                          }, // options
+
+
+                        });
                     </script>
                 </div>                    
             </div>
