@@ -18,9 +18,19 @@ class ActivitiesController extends Controller
      */
     public function index()
     {
-        $activities = Activity::all();
+        $activities = DB::table('daily_activity')->join('users', 'daily_activity.nip', 'users.nip')->select('daily_activity.*', 'users.fullname')->get();
+        // dd($activities);
         return view('dailyactivity.index', compact('activities'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    public function selftable()
+    {
+        $activities = DB::table('daily_activity')->where('daily_activity.nip', Auth::user()->nip)->join('users', 'daily_activity.nip', 'users.nip')->select('daily_activity.*', 'users.fullname')->get();
+        // dd($activities);
+        return view('dailyactivity.selftable', compact('activities'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+
 
     /**
      * Show the form for creating a new resource.

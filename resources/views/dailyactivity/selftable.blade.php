@@ -6,7 +6,7 @@
 <div class="page-header row no-gutters py-4">
 	<div class="col-12 col-sm-4 text-center text-sm-left mb-0">
 		<span class="text-uppercase page-subtitle">Dashboard</span>
-		<h3 class="page-title">Rekap Harian</h3>
+		<h3 class="page-title">Rekap Harian Ku</h3>
 	</div>
 </div>
 <!-- End Page Header -->
@@ -69,9 +69,10 @@
                                 <form action="{{ route('act.destroy',$act->id) }}" method="POST">
 
                                     <a class="btn btn-info btn-sm" href="{{ route('act.show',$act->id) }}">Show</a>
-                                    @if ($act->nip == Auth::user()->nip )
-                                    <a class="btn btn-primary btn-sm" href="{{ route('act.edit',$act->id) }}">Edit</a>
-                                    @endif 
+                                    <a class="btn btn-primary btn-sm" href="{{ route('act.edit',$act->id) }}">Edit</a>                         
+                                    @csrf
+                                    @method('DELETE')                         
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
                                 </form>
                             </td>
                         </tr>

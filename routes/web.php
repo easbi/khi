@@ -21,7 +21,9 @@ Route::get('/', function () {
 
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 
+Route::get('act/selftable', [ActivitiesController::class, 'selftable'])->name('act.selftable');;
 Route::resource('act', ActivitiesController::class);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

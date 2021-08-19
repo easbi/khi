@@ -4,8 +4,8 @@
 
 <div class="page-header row no-gutters py-4">
 	<div class="col-12 col-sm-4 text-center text-sm-left mb-0">
-		<span class="text-uppercase page-subtitle">Dashboard</span>
-		<h3 class="page-title">Rekap Penilaian</h3>
+		<span class="text-uppercase page-subtitle">KHI</span>
+		<h3 class="page-title">Edit Kegiatan</h3>
 	</div>
 </div>
 
@@ -65,15 +65,18 @@
 									<label for="satuan">Satuan:</label>
 									<input type="text" class="form-control" name="satuan" value="{{ $activity->satuan }}" />
 								</div>
-
 								<div class="form-group">
 									<label for="is_done">Status Penyelesaian</label>
 									<select id="is_done" class="form-control" name="is_done">
-										<option value="" selected disabled>Select</option>
-										<option value="1">Sudah Selesai</option>
-										<option value="2">Belum Selesai</option>
+										<option value="1" @if($activity->is_done == "1") selected @endif>Sudah Selesai</option>
+										<option value="2" @if($activity->is_done == "2") selected @endif>Belum Selesai</option>
 									</select>
 								</div>
+								<div class="form-group">
+									<label for="berkas">Bukti Kegiatan:</label>
+									<input type="file" name="berkas">
+								</div>
+								<br>
 								<div class="form-group">
 									<button type="submit" class="btn btn-success">Kirim</button>
 								</div>
