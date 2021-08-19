@@ -14,11 +14,57 @@
 <!-- Content -->
 
 <!-- Default Light Table -->
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+<div class="row">
+    <div class="col">
+        <div class="card card-small mb-4">
+            <div class="card-header border-bottom">
+                <h6 class="m-0">Monitoring Aktivitas</h6>
+            </div>
+            <div class="card-body d-flex flex-column">
+               <p class="text-center">
+                    <strong>Darah Tinggi</strong>
+                </p>
+                <div class="chart">
+                    <canvas id="myChart1"></canvas>
+                    <script type="text/javascript">
+                        var ctx = document.getElementById('myChart1').getContext('2d');
+                        var chart = new Chart(ctx, {
+                                                // The type of chart we want to create
+                                                type: 'line',
+                                                // The data for our dataset
+                                                data: {
+                                                    labels: <?php echo $darah_tinggi_periode; ?>,
+                                                    datasets: [{
+                                                        label: 'Kasus Darah Tinggi',
+                                                        backgroundColor: 'rgb(255, 99, 132)',
+                                                        borderColor: 'rgb(255, 99, 132)',
+                                                        data: <?php echo $darah_tinggi_jumlah; ?>
+                                                    }]
+                                                },
+                                                // Configuration options go here
+                                                options: {
+                                                    tooltips :{
+                                                        mode: 'nearest'
+                                                    },
+                                                    animation: {
+                                                        duration: 2000,
+                                                        easing : 'easeInBounce'
+                                                    }
+                                                }
+                                            });
+                    </script>
+                </div>                    
+            </div>
+        </div>
+    </div>
+</div>
 <div class="row">
 	<div class="col">
 		<div class="card card-small mb-4">
 			<div class="card-header border-bottom">
-				<h6 class="m-0">Active Users</h6>
+				<h6 class="m-0">Tabel Aktivitas</h6>
 			</div>
 			@if ($message = Session::get('success'))
             <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
