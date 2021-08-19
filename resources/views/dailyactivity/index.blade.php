@@ -18,15 +18,12 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
 <div class="row">
-    <div class="col">
+    <div class="col-sm-8">
         <div class="card card-small mb-4">
             <div class="card-header border-bottom">
-                <h6 class="m-0">Monitoring Aktivitas</h6>
+                <h6 class="m-0">Progress Entri Pegawai</h6>
             </div>
             <div class="card-body d-flex flex-column">
-                <p class="text-center">
-                    <strong>Progress Entri Pegawai</strong>
-                </p>
                 <style type="text/css">
                     .chart1 {
                         height:80px
@@ -47,11 +44,11 @@
                                 color: 'white'               //Color for percentage value
                               }
                             }, {
-                              data: [100 - <?php echo $userfill*100/13; ?>],
+                              data: [100 - <?php echo number_format($userfill*100/13,2); ?>],
                               backgroundColor: "lightgrey",
                               hoverBackgroundColor: "lightgrey",
                               datalabels: {
-                                color: 'lightgray'          // Make the color of the second bar percentage value same as the color of the bar
+                                color: 'lightgrey'          // Make the color of the second bar percentage value same as the color of the bar
                               }
                             }, ]
                           },
@@ -83,12 +80,18 @@
                                 borderRadius: 4,
                                 borderWidth: 1,
                                 font: {
-                                  size: 20,
+                                  size: 14,
                                   weight: "bold",                                           //Provide Font family for fancier look
                                 },
                                 offset: 10,
-                                formatter: function(value, context) {
-                                  return context.chart.data.labels[context.dataIndex];      //Provide value of the percentage manually or through data
+                                formatter: (value, ctx) => {
+                                    let sum = 0;
+                                    let dataArr = ctx.chart.data.datasets[0].data;
+                                    dataArr.map(data => {
+                                        sum += data;
+                                    });
+                                    let percentage = (value).toFixed(2)+"%   "+ "("+ (value*13/100).toFixed(0)+" org)";
+                                    return percentage;
                                 },
                               },
                             },
@@ -98,6 +101,44 @@
                         });
                     </script>
                 </div>                    
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card card-small mb-4">
+            <div class="card-header border-bottom">
+                <h6 class="m-0">Total Kegiatan Hari Ini</h6>
+            </div>
+            <div class="card-body d-flex flex-column">                   
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card card-small mb-4">
+            <div class="card-header border-bottom">
+                <h6 class="m-0">Pegawai Menurut Kondisi Pekerjaan</h6>
+            </div>
+            <div class="card-body d-flex flex-column">                   
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card card-small mb-4">
+            <div class="card-header border-bottom">
+                <h6 class="m-0">Pegawai Menurut Penggunaan Internet</h6>
+            </div>
+            <div class="card-body d-flex flex-column">                   
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card card-small mb-4">
+            <div class="card-header border-bottom">
+                <h6 class="m-0">Pegawai Menurut Penyelesaian Pekerjaan</h6>
+            </div>
+            <div class="card-body d-flex flex-column">                   
             </div>
         </div>
     </div>
