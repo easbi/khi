@@ -20,9 +20,21 @@ class ActivitiesController extends Controller
     public function index()
     {
         $activities = DB::table('daily_activity')->join('users', 'daily_activity.nip', 'users.nip')->select('daily_activity.*', 'users.fullname')->get();
+        $act_count_today = Activity::whereDate('tgl', Carbon::today())->count();
+
+        $yesterday = date("Y-m-d", strtotime( '-1 days' ) );
+        $act_count_yesterday = Activity::whereDate('tgl', $yesterday )->count();
+
         $userfill = Activity::whereDate('tgl', Carbon::today())->distinct('nip')->count();
 
-        return view('dailyactivity.index', compact('activities', 'userfill'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('dailyactivity.index', 
+            compact(
+                'activities', 
+                'userfill', 
+                'act_count_today',
+                'act_count_yesterday',
+            ))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function selftable()
