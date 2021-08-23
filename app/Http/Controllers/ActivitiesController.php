@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Auth;
 
 class ActivitiesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -27,12 +32,20 @@ class ActivitiesController extends Controller
 
         $userfill = Activity::whereDate('tgl', Carbon::today())->distinct('nip')->count();
 
+        $status_wfo_wfh = Activity::whereDate('tgl', Carbon::today())
+                ->select('wfo_wfh', \DB::raw("COUNT('id') as count"))
+                ->groupBy('wfo_wfh')
+                ->get();
+
+        // dd($status_wfo_wfh);
+
         return view('dailyactivity.index', 
             compact(
                 'activities', 
                 'userfill', 
                 'act_count_today',
                 'act_count_yesterday',
+                'status_wfo_wfh',
             ))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }

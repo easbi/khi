@@ -117,12 +117,12 @@
                             <h6 class="stats-small__value count my-3">{{ $act_count_today }}</h6>
                         </div>
                         <div class="stats-small__data">
-                            @if ((($act_count_today - $act_count_yesterday)*100/$act_count_yesterday)<0)
+                            @if ((($act_count_today - $act_count_yesterday))<0)
                             <span class="stats-small__percentage stats-small__percentage--decrease">
                             @else
                             <span class="stats-small__percentage stats-small__percentage--increase">
                             @endif
-                            {{ ($act_count_today - $act_count_yesterday) * 100 /$act_count_yesterday }} %</span> dibanding hari yang lalu
+                            {{ ($act_count_today - $act_count_yesterday) }}</span> dibanding hari yang lalu
                         </div>
                     </div>
                 </div>
