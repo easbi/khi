@@ -16,7 +16,11 @@ class ActivitiesController extends Controller
     {
         $this->middleware('auth');
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/master
     /**
      * Display a listing of the resource.
      *
@@ -32,12 +36,16 @@ class ActivitiesController extends Controller
 
         $userfill = Activity::whereDate('tgl', Carbon::today())->distinct('nip')->count();
 
+<<<<<<< HEAD
         $status_wfo_wfh = Activity::whereDate('tgl', Carbon::today())
                 ->select('wfo_wfh', \DB::raw("COUNT('id') as count"))
                 ->groupBy('wfo_wfh')
                 ->get();
 
         // dd($status_wfo_wfh);
+=======
+        // dd(Auth::user()->nip);
+>>>>>>> origin/master
 
         return view('dailyactivity.index', 
             compact(
