@@ -122,11 +122,6 @@
                             @else
                             <span class="stats-small__percentage stats-small__percentage--increase">
                             @endif
-<<<<<<< HEAD
-                            {{ ($act_count_today - $act_count_yesterday) }}</span> dibanding hari yang lalu
-=======
-                            {{ ($act_count_today - $act_count_yesterday) * 100 /$act_count_yesterday }} %</span>
->>>>>>> origin/master
                         </div>
                     </div>
                 </div>
