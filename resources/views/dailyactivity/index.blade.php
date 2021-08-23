@@ -17,6 +17,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <div class="row">
     <div class="col-sm-6">
         <div class="card card-small mb-4">
@@ -135,7 +136,85 @@
             <div class="card-header border-bottom">
                 <h6 class="m-0">Pegawai Menurut Kondisi Pekerjaan</h6>
             </div>
-            <div class="card-body d-flex flex-column">                   
+            <div class="card-body d-flex flex-column">  
+                <div class="chart-container">
+                    <div class="pie-chart-container">
+                      <canvas id="pie-chart1"></canvas>
+                    </div>
+                </div>  
+                <script>
+                    $(function(){
+                          //get the pie chart canvas
+                          var cData = JSON.parse('<?php echo $status_wfo_wfh; ?>');
+                          var ctx = $("#pie-chart1");
+                     
+                          //pie chart data
+                          var data = {
+                            labels: cData.label,
+                            datasets: [
+                              {
+                                label: "Users Count",
+                                data: cData.data,
+                                backgroundColor: [
+                                  "#F7D002",
+                                  "#018E42",
+                                  "#454E9E",
+                                  "#F00699",
+                                ],
+                                borderColor: [
+                                  "#F7D002",
+                                  "#018E42",
+                                  "#454E9E",
+                                  "#F00699",
+                                ],
+                                borderWidth: [1, 1, 1, 1]
+                              }
+                            ]
+                          };
+                     
+                          //options
+                          var options = {
+                            responsive: true,
+                            title: {
+                              display: true,
+                              position: "top",
+                              text: "",
+                              fontSize: 18,
+                              fontColor: "#111"
+                            },
+                            legend: {
+                              display: true,
+                              position: "bottom",
+                              labels: {
+                                fontColor: "#333",
+                                fontSize: 16
+                              }
+                            },
+                            datalabels: {
+                                color: 'blue',
+                                labels: {
+                                  title: {
+                                    font: {
+                                      weight: 'bold'
+                                    }
+                                  },
+                                  value: {
+                                    color: 'green'
+                                  }
+                                }
+                              }
+  
+                          };
+                     
+                          //create Pie Chart class object
+                          var chart1 = new Chart(ctx, {
+                            type: "doughnut",
+                            data: data,
+                            options: options
+                          });
+                     
+                      });
+                </script>               
             </div>
         </div>
     </div>
@@ -144,7 +223,81 @@
             <div class="card-header border-bottom">
                 <h6 class="m-0">Pegawai Menurut Penyelesaian Pekerjaan</h6>
             </div>
-            <div class="card-body d-flex flex-column">                   
+            <div class="card-body d-flex flex-column">  
+                <div class="chart-container">
+                    <div class="pie-chart-container">
+                      <canvas id="pie-chart2"></canvas>
+                    </div>
+                </div>  
+                <script>
+                    $(function(){
+                          //get the pie chart canvas
+                          var cData = JSON.parse('<?php echo $status_penyelesaian; ?>');
+                          var ctx = $("#pie-chart2");
+                     
+                          //pie chart data
+                          var data = {
+                            labels: cData.label,
+                            datasets: [
+                              {
+                                label: "Users Count",
+                                data: cData.data,
+                                backgroundColor: [
+                                  "#454E9E",
+                                  "#F00699",
+                                ],
+                                borderColor: [
+                                  "#454E9E",
+                                  "#F00699",
+                                ],
+                                borderWidth: [1, 1, 1, 1]
+                              }
+                            ]
+                          };
+                     
+                          //options
+                          var options = {
+                            responsive: true,
+                            title: {
+                              display: true,
+                              position: "top",
+                              text: "",
+                              fontSize: 18,
+                              fontColor: "#111"
+                            },
+                            legend: {
+                              display: true,
+                              position: "bottom",
+                              labels: {
+                                fontColor: "#333",
+                                fontSize: 16
+                              }
+                            },
+                            datalabels: {
+                                color: 'blue',
+                                labels: {
+                                  title: {
+                                    font: {
+                                      weight: 'bold'
+                                    }
+                                  },
+                                  value: {
+                                    color: 'green'
+                                  }
+                                }
+                              }
+  
+                          };
+                     
+                          //create Pie Chart class object
+                          var chart1 = new Chart(ctx, {
+                            type: "doughnut",
+                            data: data,
+                            options: options
+                          });
+                     
+                      });
+                </script>               
             </div>
         </div>
     </div>

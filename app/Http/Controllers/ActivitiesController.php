@@ -33,12 +33,32 @@ class ActivitiesController extends Controller
         $userfill = Activity::whereDate('tgl', Carbon::today())->distinct('nip')->count();
 
 
-        $status_wfo_wfh = Activity::whereDate('tgl', Carbon::today())
+        // status WFH/WFO/dll
+        $record_status_wfo_wfh = Activity::whereDate('tgl', Carbon::today())
                 ->select('wfo_wfh', \DB::raw("COUNT('id') as count"))
                 ->groupBy('wfo_wfh')
                 ->get();
+        $status_wfo_wfh = [];
+        foreach($record_status_wfo_wfh as $row) {
+            $status_wfo_wfh['label'][] = $row->wfo_wfh;
+            $status_wfo_wfh['data'][] = (int) $row->count;
+        } 
+        $status_wfo_wfh = json_encode($status_wfo_wfh);
 
-        // dd($status_wfo_wfh);
+        // statuspenyelesaian pekerjaan
+        $record_status_penyelesaian = Activity::whereDate('tgl', Carbon::today())
+                ->select('is_done', \DB::raw("COUNT('id') as count"))
+                ->groupBy('is_done')
+                ->get();
+        $status_penyelesaian = [];
+        foreach($record_status_penyelesaian as $row) {
+            $status_penyelesaian['label'][] = $row->is_done;
+            $status_penyelesaian['data'][] = (int) $row->count;
+        }
+ 
+        $status_penyelesaian = json_encode($status_penyelesaian);
+
+        // dd($status_penyelesaian);
 
         return view('dailyactivity.index', 
             compact(
@@ -47,6 +67,7 @@ class ActivitiesController extends Controller
                 'act_count_today',
                 'act_count_yesterday',
                 'status_wfo_wfh',
+                'status_penyelesaian'
             ))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
