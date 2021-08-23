@@ -18,7 +18,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
 <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-6">
         <div class="card card-small mb-4">
             <div class="card-header border-bottom">
                 <h6 class="m-0">Progress Entri Pegawai</h6>
@@ -104,13 +104,13 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
         <div class="card card-small mb-4">
             <div class="card-header border-bottom">
                 <h6 class="m-0">Total Kegiatan Hari Ini</h6>
             </div>
             <div class="stats-small stats-small--1 card card-small">
-                <div class="card-body p-0 d-flex">
+                <div class="card-body">
                     <div class="d-flex flex-column m-auto">
                         <div class="stats-small__data text-center">
                             <span class="stats-small__label text-uppercase">Total Kegiatan</span>
@@ -122,7 +122,7 @@
                             @else
                             <span class="stats-small__percentage stats-small__percentage--increase">
                             @endif
-                            {{ ($act_count_today - $act_count_yesterday) * 100 /$act_count_yesterday }} %</span> dibanding hari yang lalu
+                            {{ ($act_count_today - $act_count_yesterday) * 100 /$act_count_yesterday }} %</span>
                         </div>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-6">
         <div class="card card-small mb-4">
             <div class="card-header border-bottom">
                 <h6 class="m-0">Pegawai Menurut Kondisi Pekerjaan</h6>
@@ -140,24 +140,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
-        <div class="card card-small h-100">
-            <div class="card-header border-bottom">
-                <h6 class="m-0">Users by device</h6>
-            </div>
-            <div class="card-body d-flex py-0">
-                <canvas height="220" class="blog-users-by-device m-auto"></canvas>
-            </div>
-        <div class="card-footer border-top">
-            <div class="row">
-                <div class="col text-right view-report">
-                    <a href="#">Full report &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
         <div class="card card-small mb-4">
             <div class="card-header border-bottom">
                 <h6 class="m-0">Pegawai Menurut Penyelesaian Pekerjaan</h6>
@@ -167,6 +150,7 @@
         </div>
     </div>
 </div>
+
 <div class="row">
 	<div class="col">
 		<div class="card card-small mb-4">

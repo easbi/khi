@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Auth;
 
 class ActivitiesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -26,6 +31,8 @@ class ActivitiesController extends Controller
         $act_count_yesterday = Activity::whereDate('tgl', $yesterday )->count();
 
         $userfill = Activity::whereDate('tgl', Carbon::today())->distinct('nip')->count();
+
+        // dd(Auth::user()->nip);
 
         return view('dailyactivity.index', 
             compact(
