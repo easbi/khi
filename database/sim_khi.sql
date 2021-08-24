@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2021 at 09:50 AM
+-- Generation Time: Aug 24, 2021 at 10:45 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -66,7 +66,15 @@ INSERT INTO `daily_activity` (`id`, `nip`, `wfo_wfh`, `fungsional`, `butir_kegia
 (18, '199602182019011002', 'WFO', NULL, NULL, 'Mengikuti Apel Pagi (Host, Menyiapkan Lagu2, Pembacaan UUD)', NULL, 'Kegiatan', 1, '1', 2, '2021-08-16', '2021-08-15 20:30:41', '2021-08-15 20:30:41', '199602182019011002'),
 (19, '199602182019011002', 'WFO', NULL, NULL, 'Memeriksa 3 Salinan Pertama PCL SAKERNAS 2021', NULL, 'Dokumen', 6, '1', 2, '2021-08-16', '2021-08-15 21:16:28', '2021-08-15 21:16:28', '199602182019011002'),
 (20, '199602182019011002', 'WFO', NULL, NULL, 'Melanjutkan Aplikasi KHI', NULL, 'Kegiatan', 1, '1', 2, '2021-08-19', '2021-08-18 19:53:05', '2021-08-18 19:53:05', '199602182019011002'),
-(21, '196506241991021001', 'WFO', NULL, NULL, 'Monitoring', NULL, 'Kegiatan', 1, '1', 2, '2021-08-19', '2021-08-19 04:56:41', '2021-08-19 04:56:41', '196506241991021001');
+(21, '196506241991021001', 'WFO', NULL, NULL, 'Monitoring', NULL, 'Kegiatan', 1, '1', 2, '2021-08-19', '2021-08-19 04:56:41', '2021-08-19 04:56:41', '196506241991021001'),
+(22, '199602182019011002', 'WFO', NULL, NULL, 'Aplikasi KHI - Membuat Display Chart Progreess Pengentrian', NULL, 'Kegiatan', 1, '1', 2, '2021-08-19', '2021-08-19 08:17:01', '2021-08-19 08:17:01', '199602182019011002'),
+(23, '199602182019011002', 'WFO', NULL, NULL, 'Mengikuti Apel Pagi  (Host, Menyiapkan Lagu2)', NULL, 'Kegiatan', 1, '1', 1, '2021-08-23', '2021-08-23 01:18:59', '2021-08-23 01:18:59', '199602182019011002'),
+(24, '199602182019011002', 'WFO', NULL, NULL, 'Menyiapkan Akun dan Username Pengisian CAWI SUPLEMEN SAK kepada PCL', NULL, 'Kegiatan', 1, '1', 1, '2021-08-23', '2021-08-23 05:46:32', '2021-08-23 05:46:32', '199602182019011002'),
+(25, '199602182019011002', 'WFH', NULL, NULL, 'Menyiapkan bahan paparan running SAE', NULL, 'Kegiatan', 1, '1', 1, '2021-08-23', '2021-08-23 05:46:37', '2021-08-23 05:46:37', '199602182019011002'),
+(26, '199602182019011002', 'WFO', NULL, NULL, 'Menyiapkan Akun dan Username Pengisian CAWI SUPLEMEN SAK kepada PCL', NULL, 'Kegiatan', 1, '1', 1, '2021-08-24', '2021-08-24 06:12:08', '2021-08-24 06:12:08', '199602182019011002'),
+(27, '199602182019011002', 'WFO', NULL, NULL, 'Membahas dokumen PODES RT', NULL, 'Kegiatan', 1, '2', 2, '2021-08-24', '2021-08-24 03:10:19', '2021-08-24 03:10:19', '199602182019011002'),
+(28, '199602182019011002', 'WFO', NULL, NULL, 'Membuat aplikasi KHI - Part 4 : Desain Dashboard KHI', NULL, 'Kegiatan', 1, '1', 2, '2021-08-24', '2021-08-24 04:42:38', '2021-08-24 04:42:38', '199602182019011002'),
+(29, '199602182019011002', 'WFH', NULL, NULL, 'Sharing Knowledge SAE EBLUP FH Ke TIM SAE PUSAT', NULL, 'Kegiatan', 1, '1', 2, '2021-08-24', '2021-08-24 08:44:49', '2021-08-24 08:44:49', '199602182019011002');
 
 -- --------------------------------------------------------
 
@@ -158,7 +166,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('aZUWdDMviwmabc8xrzdUQLcQI4qyMY4F7poLvqZO', 13, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiQmo1ZkxsMmhGODFCbW5sSzcwSkZmeWg4VFZQcWt6azU3ZWtRbzFFSyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hY3QiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxMztzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJHpWNi9FNm9nWnF4YTc5aDI4UFphTS5QN1BQck1jN1k2QU5VamsyLy9CQWNVbkdIQmcuNXNDIjt9', 1629359396);
+('VPaTdoInugeq3prNgFbt3OI8mofceJIcaUC9tegq', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoieUdRY1NLOUhncDVWckE3T2tnbTVMa1VwbEp5V1F5NExSdm50NkhhNyI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjI1OiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYWN0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJEU2eEx3S3NLWTl3ZGhPbS8yTEYvMy5VL0czVjBzTng5Umg3dU5ZbHpuYnZFQXUyR1R0MGIyIjt9', 1629794690);
 
 -- --------------------------------------------------------
 
@@ -264,7 +272,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `daily_activity`
 --
 ALTER TABLE `daily_activity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`

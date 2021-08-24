@@ -119,9 +119,9 @@
                         </div>
                         <div class="stats-small__data">
                             @if ((($act_count_today - $act_count_yesterday))<0)
-                            <span class="stats-small__percentage stats-small__percentage--decrease">
+                            <span class="stats-small__percentage stats-small__percentage--decrease">{{$act_count_today - $act_count_yesterday}}</span>
                             @else
-                            <span class="stats-small__percentage stats-small__percentage--increase">
+                            <span class="stats-small__percentage stats-small__percentage--increase">{{$act_count_today - $act_count_yesterday}} </span>
                             @endif
                         </div>
                     </div>

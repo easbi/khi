@@ -24,7 +24,7 @@ class ActivitiesController extends Controller
      */
     public function index()
     {
-        $activities = DB::table('daily_activity')->join('users', 'daily_activity.nip', 'users.nip')->select('daily_activity.*', 'users.fullname')->get();
+        $activities = DB::table('daily_activity')->join('users', 'daily_activity.nip', 'users.nip')->select('daily_activity.*', 'users.fullname')->orderBy('id', 'desc')->get();
         $act_count_today = Activity::whereDate('tgl', Carbon::today())->count();
 
         $yesterday = date("Y-m-d", strtotime( '-1 days' ) );
@@ -69,7 +69,7 @@ class ActivitiesController extends Controller
                 'status_wfo_wfh',
                 'status_penyelesaian'
             ))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+        ->with('i');
     }
 
     public function selftable()
