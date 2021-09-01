@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 24, 2021 at 10:45 AM
+-- Generation Time: Sep 01, 2021 at 05:21 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -74,7 +74,13 @@ INSERT INTO `daily_activity` (`id`, `nip`, `wfo_wfh`, `fungsional`, `butir_kegia
 (26, '199602182019011002', 'WFO', NULL, NULL, 'Menyiapkan Akun dan Username Pengisian CAWI SUPLEMEN SAK kepada PCL', NULL, 'Kegiatan', 1, '1', 1, '2021-08-24', '2021-08-24 06:12:08', '2021-08-24 06:12:08', '199602182019011002'),
 (27, '199602182019011002', 'WFO', NULL, NULL, 'Membahas dokumen PODES RT', NULL, 'Kegiatan', 1, '2', 2, '2021-08-24', '2021-08-24 03:10:19', '2021-08-24 03:10:19', '199602182019011002'),
 (28, '199602182019011002', 'WFO', NULL, NULL, 'Membuat aplikasi KHI - Part 4 : Desain Dashboard KHI', NULL, 'Kegiatan', 1, '1', 2, '2021-08-24', '2021-08-24 04:42:38', '2021-08-24 04:42:38', '199602182019011002'),
-(29, '199602182019011002', 'WFH', NULL, NULL, 'Sharing Knowledge SAE EBLUP FH Ke TIM SAE PUSAT', NULL, 'Kegiatan', 1, '1', 2, '2021-08-24', '2021-08-24 08:44:49', '2021-08-24 08:44:49', '199602182019011002');
+(29, '199602182019011002', 'WFH', NULL, NULL, 'Sharing Knowledge SAE EBLUP FH Ke TIM SAE PUSAT', NULL, 'Kegiatan', 1, '1', 2, '2021-08-24', '2021-08-24 08:44:49', '2021-08-24 08:44:49', '199602182019011002'),
+(30, '199602182019011002', 'WFO', NULL, NULL, 'Rapat Pembahasan Kuesioner PODES RT', NULL, 'Kegiatan', 1, '1', 2, '2021-08-25', '2021-08-25 06:32:38', '2021-08-25 06:32:38', '199602182019011002'),
+(31, '199602182019011002', 'WFH', NULL, NULL, 'Sharing Knowledge SAE EBLUP FH Ke TIM SAE PUSAT', NULL, 'Kegiatan', 1, '1', 2, '2021-08-25', '2021-08-25 08:53:22', '2021-08-25 08:53:22', '199602182019011002'),
+(32, '199602182019011002', 'WFO', NULL, NULL, 'Split, Merge, dan Penarikan sampel IMK Tahunan', NULL, 'Kegiatan', 1, '1', 2, '2021-08-25', '2021-08-25 08:53:49', '2021-08-25 08:53:49', '199602182019011002'),
+(33, '199602182019011002', 'WFO', NULL, NULL, 'Cek SPTK 1 Dokumen Yang Sampel U', NULL, 'Kegiatan', 1, '1', 2, '2021-08-25', '2021-08-25 08:56:43', '2021-08-25 08:56:43', '199602182019011002'),
+(34, '199602182019011002', 'WFO', NULL, NULL, 'Pelatihan SITASI 2021', NULL, 'Kegiatan', 1, '1', 2, '2021-09-01', '2021-09-01 02:27:47', '2021-09-01 02:27:47', '199602182019011002'),
+(35, '199602182019011002', 'WFO', NULL, NULL, 'Memeriksa Dokumen SAKERNAS 2021', NULL, 'Kegiatan', 1, '2', 2, '2021-09-01', '2021-09-01 02:28:13', '2021-09-01 02:28:13', '199602182019011002');
 
 -- --------------------------------------------------------
 
@@ -166,7 +172,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('VPaTdoInugeq3prNgFbt3OI8mofceJIcaUC9tegq', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoieUdRY1NLOUhncDVWckE3T2tnbTVMa1VwbEp5V1F5NExSdm50NkhhNyI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjI1OiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYWN0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJEU2eEx3S3NLWTl3ZGhPbS8yTEYvMy5VL0czVjBzTng5Umg3dU5ZbHpuYnZFQXUyR1R0MGIyIjt9', 1629794690);
+('2O0lPTf0PBQrDU0yIDjr5vB9Z33Ox96ajAyU9cmg', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoicVRGS2xXWU9EODRtb2g5djlHWFFNM3FWcUR4d2FXc0l2SDg2ZVhFciI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjI1OiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYWN0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJEU2eEx3S3NLWTl3ZGhPbS8yTEYvMy5VL0czVjBzTng5Umg3dU5ZbHpuYnZFQXUyR1R0MGIyIjt9', 1630463294),
+('k8FOebReEOHV73tX1JjdR8KecA5eq1tqM5B3Rh1a', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiRFVFTmttZUFHNUhZSVdBaTFkVzZqaUxpZEp6Ym91c3lVakZCeElNQiI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjI1OiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYWN0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJEU2eEx3S3NLWTl3ZGhPbS8yTEYvMy5VL0czVjBzTng5Umg3dU5ZbHpuYnZFQXUyR1R0MGIyIjt9', 1629881803);
 
 -- --------------------------------------------------------
 
@@ -272,7 +279,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `daily_activity`
 --
 ALTER TABLE `daily_activity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`

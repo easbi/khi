@@ -228,7 +228,8 @@
                     <div class="pie-chart-container">
                       <canvas id="pie-chart2"></canvas>
                     </div>
-                </div>  
+                </div>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>  
                 <script>
                     $(function(){
                           //get the pie chart canvas
@@ -273,19 +274,15 @@
                                 fontSize: 16
                               }
                             },
-                            datalabels: {
-                                color: 'blue',
-                                labels: {
-                                  title: {
-                                    font: {
-                                      weight: 'bold'
-                                    }
-                                  },
-                                  value: {
-                                    color: 'green'
-                                  }
-                                }
-                              }
+                            plugins: {
+                                datalabels: {
+                                    formatter: function (value, context) {
+                                        return context.chart.data.labels[
+                                            context.dataIndex
+                                        ];
+                                    },
+                                },
+                            },
   
                           };
                      
