@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2021 at 05:21 AM
+-- Generation Time: Sep 07, 2021 at 07:56 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -80,7 +80,11 @@ INSERT INTO `daily_activity` (`id`, `nip`, `wfo_wfh`, `fungsional`, `butir_kegia
 (32, '199602182019011002', 'WFO', NULL, NULL, 'Split, Merge, dan Penarikan sampel IMK Tahunan', NULL, 'Kegiatan', 1, '1', 2, '2021-08-25', '2021-08-25 08:53:49', '2021-08-25 08:53:49', '199602182019011002'),
 (33, '199602182019011002', 'WFO', NULL, NULL, 'Cek SPTK 1 Dokumen Yang Sampel U', NULL, 'Kegiatan', 1, '1', 2, '2021-08-25', '2021-08-25 08:56:43', '2021-08-25 08:56:43', '199602182019011002'),
 (34, '199602182019011002', 'WFO', NULL, NULL, 'Pelatihan SITASI 2021', NULL, 'Kegiatan', 1, '1', 2, '2021-09-01', '2021-09-01 02:27:47', '2021-09-01 02:27:47', '199602182019011002'),
-(35, '199602182019011002', 'WFO', NULL, NULL, 'Memeriksa Dokumen SAKERNAS 2021', NULL, 'Kegiatan', 1, '2', 2, '2021-09-01', '2021-09-01 02:28:13', '2021-09-01 02:28:13', '199602182019011002');
+(35, '199602182019011002', 'WFO', NULL, NULL, 'Memeriksa Dokumen SAKERNAS 2021', NULL, 'Kegiatan', 1, '2', 2, '2021-09-01', '2021-09-01 02:28:13', '2021-09-01 02:28:13', '199602182019011002'),
+(36, '199602182019011002', 'WFO', NULL, NULL, 'Menyiapkan dokumen dan mensubmit untuk keperluan Promosi Statistik 1374', NULL, 'Kegiatan', 1, '1', 2, '2021-09-07', '2021-09-07 05:03:03', '2021-09-07 05:03:03', '199602182019011002'),
+(37, '199602182019011002', 'WFO', NULL, NULL, 'Pergi dengan Ka BPS ke Diskominfo Mengenai Pencanangan PODES RT dan Kelurahan Cinta Statistik', NULL, 'Kegiatan', 1, '2', 2, '2021-09-07', '2021-09-07 05:03:53', '2021-09-07 05:03:53', '199602182019011002'),
+(38, '199602182019011002', 'WFO', NULL, NULL, 'Memantau Perbaikan Jaringan Internet Kantor', NULL, 'Kegiatan', 1, '1', 2, '2021-09-07', '2021-09-07 05:04:45', '2021-09-07 05:04:45', '199602182019011002'),
+(39, '199602182019011002', 'WFO', NULL, NULL, 'Finalisasi Pemeriksaan SAKERNAS 2021 Part 2', NULL, 'Dokumen', 50, '1', 2, '2021-09-06', '2021-09-07 05:05:20', '2021-09-07 05:05:20', '199602182019011002');
 
 -- --------------------------------------------------------
 
@@ -172,8 +176,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('2O0lPTf0PBQrDU0yIDjr5vB9Z33Ox96ajAyU9cmg', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoicVRGS2xXWU9EODRtb2g5djlHWFFNM3FWcUR4d2FXc0l2SDg2ZVhFciI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjI1OiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYWN0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJEU2eEx3S3NLWTl3ZGhPbS8yTEYvMy5VL0czVjBzTng5Umg3dU5ZbHpuYnZFQXUyR1R0MGIyIjt9', 1630463294),
-('k8FOebReEOHV73tX1JjdR8KecA5eq1tqM5B3Rh1a', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiRFVFTmttZUFHNUhZSVdBaTFkVzZqaUxpZEp6Ym91c3lVakZCeElNQiI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjI1OiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYWN0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJEU2eEx3S3NLWTl3ZGhPbS8yTEYvMy5VL0czVjBzTng5Umg3dU5ZbHpuYnZFQXUyR1R0MGIyIjt9', 1629881803);
+('UmJMPuOWRBJwXr49oGbOBbCBgvhDeEbWLnlgNIXC', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiejBuOXk3ZGg2cW90NlZ5WnU5WTBlMnV1OUNsckhCUVhPWmREZ0hGNSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hY3QiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YTowOnt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJEU2eEx3S3NLWTl3ZGhPbS8yTEYvMy5VL0czVjBzTng5Umg3dU5ZbHpuYnZFQXUyR1R0MGIyIjt9', 1630991132);
 
 -- --------------------------------------------------------
 
@@ -279,7 +282,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `daily_activity`
 --
 ALTER TABLE `daily_activity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
