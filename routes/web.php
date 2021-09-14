@@ -15,9 +15,7 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ActivitiesController::class, 'index']);
 
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 
