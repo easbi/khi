@@ -67,12 +67,6 @@
                   @endif
               </span>
           </li>
-          <li class="list-group-item d-flex px-3">
-            <button class="btn btn-sm btn-outline-accent">
-              <i class="material-icons">save</i> Save Draft</button>
-              <button class="btn btn-sm btn-accent ml-auto">
-                  <i class="material-icons">file_copy</i> Publish</button>
-              </li>
           </ul>
       </div>
   </div>
