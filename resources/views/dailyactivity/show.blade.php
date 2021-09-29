@@ -16,50 +16,68 @@
 <!-- Default Light Table -->
 <div class="row">
 	<div class="col">
-		<div class="card card-small mb-4">
-			<div class="card-header border-bottom">
-				<h6 class="m-0">Active Users</h6>
-			</div>
-			@if ($message = Session::get('success'))
-			<div class="alert alert-success">
-				<p>{{ $message }}</p>
-            </div>
-            @endif
-            <div class="card-body d-flex flex-column">
-                <table id="example"  class="display responsive nowrap" width="100%">
-                    <thead>
-                        <tr>
-                            <th>Pegawai</th>
-                            <th>Tanggal</th>
-                            <th>Status</th>
-                            <th>Kegiatan</th>
-                            <th>Kuantitas</th>
-                            <th>Pemakaian Internet</th>
-                            <th>Aksi</th>
-                        </tr>    
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{ $activity->nip }}</td>
-                            <td>{{ $activity->created_at }}</td>
-                            <td>{{ $activity->wfo_wfh }}</td>
-                            <td>{{ $activity->kegiatan }}</td>
-                            <td>{{ $activity->kuantitas }}</td>
-                            <td>{{ $activity->is_internet }}</td>
-                            <td>
-                                <form action="{{ route('act.destroy',$activity->id) }}" method="POST">
-                                    <a class="btn btn-primary btn-sm" href="{{ route('act.edit',$activity->id) }}">Edit</a>                         
-                                    @csrf
-                                    @method('DELETE')                         
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>                        
-            </div>
-		</div>
-	</div>
+        <!-- Post Overview -->
+        <div class='card card-small mb-3'>
+          <div class="card-header border-bottom">
+            <h6 class="m-0">Actions</h6>
+        </div>
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+        @endif
+
+        <div class='card-body p-0'>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item p-3">
+                <span class="d-flex mb-2">
+                  <i class="material-icons mr-1">calendar_today</i>
+                  <strong class="mr-1">Tanggal :</strong> {{ $activity->tgl }}
+              </span>
+              <span class="d-flex mb-2">
+                  <i class="material-icons mr-1">visibility</i>
+                  <strong class="mr-1">Kondisi Pekerjaan :</strong>
+                  <strong class="text-success">{{ $activity->wfo_wfh }}</strong>
+              </span>
+              <span class="d-flex mb-2">
+                  <i class="material-icons mr-1">flag</i>                  
+                  <strong class="mr-1">Kegiatan:</strong> {{ $activity->kegiatan }}
+              </span>
+              <span class="d-flex">
+                  <i class="material-icons mr-1">score</i>
+                  <strong class="mr-1">Kuantitas dan Satuan:</strong>
+                  <strong class="text-warning">{{ $activity->kuantitas }} {{ $activity->satuan }}</strong>
+              </span>              
+              <span class="d-flex">
+                  <i class="material-icons mr-1">score</i>
+                  <strong class="mr-1">Berkas/Bukti Kegiatan:</strong>
+                  @if ($activity->berkas == NULL )
+                    <strong class="text-warning">- </strong>
+                  @else 
+                    <a class="btn btn-primary btn-sm" href="{{ url('/bukti',$activity->berkas) }}">Berkas</a>
+                  @endif
+              </span>
+              <span class="d-flex">
+                  <i class="material-icons mr-1">score</i>
+                  <strong class="mr-1">Status Pengerjaan:</strong>
+                  @if ($activity->is_done == 1 )
+                    Selesai
+                  @else
+                    Belum Selesai
+                  @endif
+              </span>
+          </li>
+          <li class="list-group-item d-flex px-3">
+            <button class="btn btn-sm btn-outline-accent">
+              <i class="material-icons">save</i> Save Draft</button>
+              <button class="btn btn-sm btn-accent ml-auto">
+                  <i class="material-icons">file_copy</i> Publish</button>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <!-- / Post Overview -->
+</div>
 </div>
 <!-- End Default Light Table -->
 <!-- End of Content -->		
