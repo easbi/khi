@@ -163,9 +163,7 @@ class ActivitiesController extends Controller
            $file = $request->file('berkas');
            $filename = $filename = \Carbon\Carbon::now()->format('Y-m-d H-i').'_'. Auth::user()->nip .'_'. str_replace(' ', '', substr(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME), 0, 25)). '.' .$file->getClientOriginalExtension();
            $file->move('bukti', $filename);
-        } else {
-            dd('something error happened');
-        }
+        } 
 
         $activity = Activity::find($id);
         if($activity) {
