@@ -111,6 +111,7 @@ class ActivitiesController extends Controller
         $result = Activity::create([
                 'nip' => Auth::user()->nip,
                 'wfo_wfh' => $request->wfo_wfh,
+                'durasi' => $request->durasi,
                 'kegiatan'=> $request->kegiatan, 
                 'satuan'=> $request->satuan,
                 'kuantitas'=> $request->kuantitas,
@@ -170,6 +171,7 @@ class ActivitiesController extends Controller
             $activity->nip = Auth::user()->nip;
             $activity->wfo_wfh = $request->wfo_wfh;
             $activity->kegiatan = $request->kegiatan;
+            $activity->durasi =$request->durasi;
             $activity->satuan = $request->satuan;
             $activity->kuantitas = $request->kuantitas;
             $activity->is_internet = $request->is_internet;

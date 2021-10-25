@@ -324,6 +324,7 @@
                             <th>Tanggal</th>
                             <th>Status</th>
                             <th>Kegiatan</th>
+                            <th>Durasi Kegiatan</th>
                             <th>Pemakaian Internet</th>
                             <th>Progress</th>
                             <th>Aksi</th>
@@ -337,6 +338,13 @@
                             <td>{{ Carbon\Carbon::parse($act->tgl)->format('d-M-Y')  }}</td>
                             <td>{{ $act->wfo_wfh }}</td>
                             <td>{{ \Illuminate\Support\Str::limit($act->kegiatan , 40) }}</td>
+                            <td>
+                                @if($act->durasi == NULL )
+                                    <span class="badge badge-success">-</span>
+                                @else
+                                    <span class="badge badge-primary">{{$act->durasi}}</span>
+                                @endif
+                            </td>
                             <td>
                                 @if($act->is_internet == 1)
                                     <span class="badge badge-success">Ya</span>

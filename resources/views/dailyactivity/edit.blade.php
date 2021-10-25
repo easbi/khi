@@ -58,6 +58,10 @@
 									<input type="text" class="form-control" name="kegiatan" value="{{ $activity->kegiatan }}" />
 								</div>
 								<div class="form-group">
+									<label for="durasi">Lama Pengerjaan:</label>
+									<input type="text" class="form-control" name="durasi" value="{{ $activity->durasi }}" />
+								</div>
+								<div class="form-group">
 									<label for="kuantitas">Jumlah:</label>
 									<input type="number" class="form-control" name="kuantitas" value="{{ $activity->kuantitas }}" />
 								</div>
