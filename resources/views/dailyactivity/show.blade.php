@@ -43,6 +43,10 @@
                   <i class="material-icons mr-1">flag</i>                  
                   <strong class="mr-1">Kegiatan:</strong> {{ $activity->kegiatan }}
               </span>
+              <span class="d-flex mb-2">
+                  <i class="material-icons mr-1">flag</i>                  
+                  <strong class="mr-1">Durasi:</strong> {{ $activity->durasi }} menit
+              </span>
               <span class="d-flex">
                   <i class="material-icons mr-1">score</i>
                   <strong class="mr-1">Kuantitas dan Satuan:</strong>

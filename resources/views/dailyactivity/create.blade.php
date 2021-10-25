@@ -59,7 +59,7 @@
 									<input type="text" class="form-control" name="kegiatan"/>
 								</div>
 								<div class="form-group">
-									<label for="durasi">Lama Pengerjaan:</label>
+									<label for="durasi">Durasi Pengerjaan (menit):</label>
 									<input type="text" class="form-control" name="durasi"/>
 								</div>
 								<div class="form-group">

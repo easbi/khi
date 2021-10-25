@@ -324,7 +324,7 @@
                             <th>Tanggal</th>
                             <th>Status</th>
                             <th>Kegiatan</th>
-                            <th>Durasi Kegiatan</th>
+                            <th>Durasi Kegiatan (menit)</th>
                             <th>Pemakaian Internet</th>
                             <th>Progress</th>
                             <th>Aksi</th>
@@ -340,9 +340,9 @@
                             <td>{{ \Illuminate\Support\Str::limit($act->kegiatan , 40) }}</td>
                             <td>
                                 @if($act->durasi == NULL )
-                                    <span class="badge badge-success">-</span>
+                                    <span class="badge badge-warning">-</span>
                                 @else
-                                    <span class="badge badge-primary">{{$act->durasi}}</span>
+                                    <span class="badge badge-success">{{$act->durasi}}</span>
                                 @endif
                             </td>
                             <td>

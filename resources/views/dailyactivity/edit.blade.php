@@ -58,7 +58,7 @@
 									<input type="text" class="form-control" name="kegiatan" value="{{ $activity->kegiatan }}" />
 								</div>
 								<div class="form-group">
-									<label for="durasi">Lama Pengerjaan:</label>
+									<label for="durasi">Durasi Pengerjaan (menit):</label>
 									<input type="text" class="form-control" name="durasi" value="{{ $activity->durasi }}" />
 								</div>
 								<div class="form-group">
