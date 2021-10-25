@@ -120,6 +120,7 @@ class ActivitiesController extends Controller
         $result = Activity::create([
                 'nip' => Auth::user()->nip,
                 'wfo_wfh' => $request->wfo_wfh,
+                'durasi' => $request->durasi,
                 'kegiatan'=> $request->kegiatan, 
                 'satuan'=> $request->satuan,
                 'kuantitas'=> $request->kuantitas,
@@ -165,17 +166,28 @@ class ActivitiesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //check the existing of file upload Berkas
+        $filename = NULL;
+        if ($request->hasFile('berkas'))
+        {
+           $file = $request->file('berkas');
+           $filename = $filename = \Carbon\Carbon::now()->format('Y-m-d H-i').'_'. Auth::user()->nip .'_'. str_replace(' ', '', substr(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME), 0, 25)). '.' .$file->getClientOriginalExtension();
+           $file->move('bukti', $filename);
+        } 
+
         $activity = Activity::find($id);
         if($activity) {
             $activity->nip = Auth::user()->nip;
             $activity->wfo_wfh = $request->wfo_wfh;
             $activity->kegiatan = $request->kegiatan;
+            $activity->durasi =$request->durasi;
             $activity->satuan = $request->satuan;
             $activity->kuantitas = $request->kuantitas;
             $activity->is_internet = $request->is_internet;
             $activity->tgl = $request->tgl;
             $activity->is_done = $request->is_done;
             $activity->created_by = Auth::user()->nip;
+            $activity->berkas = $filename;
             $activity->save();
         }
         return redirect()->route('act.index')->with('success', 'The activity updated successfully');
