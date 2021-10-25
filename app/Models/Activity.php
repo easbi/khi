@@ -15,6 +15,7 @@ class Activity extends Model
         'nip',
         'wfo_wfh',
         'kegiatan',
+        'durasi',
         'bukti',
         'satuan',
         'kuantitas',

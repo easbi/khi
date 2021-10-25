@@ -334,7 +334,7 @@
                         <tr>
                             <td>{{ ++$i }}</td>
                             <td>{{ \Illuminate\Support\Str::limit($act->fullname , 17) }}</td>
-                            <td>{{ Carbon\Carbon::parse($act->created_at)->format('d-M-Y')  }}</td>
+                            <td>{{ Carbon\Carbon::parse($act->tgl)->format('d-M-Y')  }}</td>
                             <td>{{ $act->wfo_wfh }}</td>
                             <td>{{ \Illuminate\Support\Str::limit($act->kegiatan , 40) }}</td>
                             <td>
