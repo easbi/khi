@@ -108,6 +108,15 @@ class ActivitiesController extends Controller
             'tgl'=> 'required',
         ]);
 
+        $filename = NULL;
+        if ($request->hasFile('berkas')) {
+            $file = $request->file('berkas');
+            // $filename = $request->idprov."". $request->idkabkot."". $request->idkec."". $request->idkelurahan."". $request->idbs."". $request->idsbs. '.' .$file->getClientOriginalExtension();
+            // $file->move('peta'."/".$jenispeta->jenis_peta, $filename);
+        } else {
+            dd('something error happened');
+        }
+
         $result = Activity::create([
                 'nip' => Auth::user()->nip,
                 'wfo_wfh' => $request->wfo_wfh,

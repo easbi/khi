@@ -87,7 +87,7 @@
               <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
                 <div class="input-group input-group-seamless ml-3">
                   <div>
-                    <img src="{{asset('template/images/avatars/bps3.png')}}" alt="User Avatar" style="width:150px;height:30px;">
+                    <img src="{{asset('template/images/avatars/bps4.png')}}" alt="User Avatar" style="width:150px;height:30px;">
                   </div>
                 </div>
               </form>
